@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+    
     def index 
         @tasks = Task.all
     end
@@ -31,7 +32,7 @@ class TasksController < ApplicationController
     def update 
         @task = Task.find(params[:id])
         
-        if @task.update(message_params)
+        if @task.update(task_params)
           flash[:success] = 'タスクが編集されました'
           redirect_to @task
         else
@@ -50,7 +51,7 @@ class TasksController < ApplicationController
     
     private
 
-    # Strong Parameter
+    # Strong Paramete
     def task_params
         params.require(:task).permit(:content)
     end

@@ -7,4 +7,8 @@
   <%= f.submit '投稿' %>
 <% end %>
 
+<h1>タスク新規作成ページ</h1>
+
+<%= render 'form', task: @task %>
+
 <%= link_to '一覧に戻る', tasks_path %>
